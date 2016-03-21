@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.threelawsrobotics.pingmyride.MapsActivity">
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			xmlns:tools="http://schemas.android.com/tools"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"/>
+
+	</android.support.design.widget.AppBarLayout>
+
+	<RelativeLayout android:id="@+id/track_tab"
+	                android:layout_width="match_parent"
+	                android:layout_height="192dp">
+		<TextView android:id="@+id/signal_strength"
+		          android:layout_width="match_parent"
+		          android:layout_height="wrap_content"
+		          android:layout_centerInParent="true"/>
+	</RelativeLayout>
+
+	<fragment android:id="@+id/map"
+	          android:name="com.google.android.gms.maps.SupportMapFragment"
+	          xmlns:android="http://schemas.android.com/apk/res/android"
+	          xmlns:tools="http://schemas.android.com/tools"
+	          android:layout_width="match_parent"
+	          android:layout_height="match_parent"/>
+
+	<RelativeLayout android:id="@+id/action_tab"
+	                android:layout_width="match_parent"
+	                android:layout_height="wrap_content"
+	                android:background="@color/colorAccent">
+		<Button android:id="@+id/action_button"
+		        android:layout_width="match_parent"
+		        android:layout_height="48dp"
+		        android:text="Park Here"
+		        android:background="@color/colorAccent"/>
+	</RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,75 @@
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<android.support.v4.widget.DrawerLayout
+		android:id="@+id/drawer_layout"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<!-- The main content view -->
+		<LinearLayout android:layout_width="match_parent"
+		              android:layout_height="match_parent"
+		              android:orientation="vertical">
+
+			<fragment android:id="@+id/map"
+			          android:name="com.google.android.gms.maps.SupportMapFragment"
+			          android:layout_width="match_parent"
+			          android:layout_height="wrap_content"
+			          tools:context="com.locator.threelawsrobotics.pingmyride.MainActivity"/>
+		</LinearLayout>
+
+		<!-- The navigation drawer -->
+		<ListView android:id="@+id/left_drawer"
+		          android:layout_width="240dp"
+		          android:layout_height="match_parent"
+		          android:layout_gravity="start"
+		          android:background="#111"
+		          android:choiceMode="singleChoice"
+		          android:divider="@android:color/transparent"
+		          android:dividerHeight="0dp"/>
+
+	</android.support.v4.widget.DrawerLayout>
+
+	<include android:id="@+id/track_card"
+	         layout="@layout/track_card"
+	         android:layout_width="match_parent"
+	         android:layout_height="wrap_content"
+	         android:layout_alignParentBottom="true"/>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fm_search_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_above="@id/track_card"
+		android:layout_alignParentRight="true"
+		android:layout_marginBottom="@dimen/half_margin"
+		android:layout_marginLeft="@dimen/full_margin"
+		android:layout_marginRight="@dimen/full_margin"
+		android:layout_marginTop="@dimen/half_margin"
+		android:scaleType="center"
+		android:src="@drawable/ic_navigation_white_24dp"
+		app:backgroundTint="@color/colorAccent"
+		app:fabSize="normal"/>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/gps_search_button"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_above="@id/fm_search_button"
+		android:layout_alignParentRight="true"
+		android:layout_marginBottom="@dimen/half_margin"
+		android:layout_marginLeft="@dimen/full_margin"
+		android:layout_marginRight="@dimen/full_margin"
+		android:layout_marginTop="@dimen/half_margin"
+		android:scaleType="center"
+		android:src="@drawable/ic_my_location_black_24dp"
+		app:backgroundTint="@color/white"
+		app:fabSize="normal"/>
+</RelativeLayout>
+

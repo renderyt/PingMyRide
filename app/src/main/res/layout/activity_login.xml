@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/login_background"
+	android:paddingBottom="@dimen/activity_vertical_margin"
+	android:paddingLeft="@dimen/activity_horizontal_margin"
+	android:paddingRight="@dimen/activity_horizontal_margin"
+	android:paddingTop="@dimen/activity_vertical_margin"
+	tools:context="com.threelawsrobotics.pingmyride.LoginActivity">
+
+
+	<ImageView android:id="@+id/logo_image"
+	           android:layout_width="wrap_content"
+	           android:layout_height="wrap_content"
+	           android:layout_alignParentTop="true"
+	           android:layout_centerHorizontal="true"
+	           android:layout_marginTop="@dimen/full_margin"
+	           android:textAlignment="center"/>
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/logo_image"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="@dimen/full_margin"
+		android:layout_marginTop="@dimen/full_margin"
+		android:text="Find your car,\nwith no hassle"
+		android:textAlignment="center"
+		android:textColor="@color/normal_text"/>
+
+	<LinearLayout android:id="@+id/google_credentials"
+	              android:layout_width="match_parent"
+	              android:layout_height="wrap_content"
+	              android:layout_centerInParent="true"
+	              android:orientation="horizontal">
+		<ImageView
+			android:id="@+id/google_login_button"
+			android:layout_width="wrap_content"
+			android:layout_height="64dp"
+			android:layout_above="@+id/manual_credentials"
+			android:layout_centerHorizontal="true"
+			android:text="Sign in with Google"/>
+	</LinearLayout>
+
+	<LinearLayout android:id="@+id/manual_credentials"
+	              android:layout_width="match_parent"
+	              android:layout_height="wrap_content"
+	              android:layout_below="@id/google_credentials"
+	              android:layout_marginBottom="@dimen/full_margin"
+	              android:layout_marginTop="@dimen/full_margin"
+	              android:orientation="horizontal">
+
+		<Button android:id="@+id/register_button"
+		        android:layout_width="0dp"
+		        android:layout_height="64dp"
+		        android:layout_weight="1"
+		        android:text="Register"
+		        android:textAlignment="center"
+		        android:textAllCaps="false"
+		        android:textSize="16sp"/>
+
+		<Button android:id="@+id/login_button"
+		        android:layout_width="0dp"
+		        android:layout_height="64dp"
+		        android:layout_weight="1"
+		        android:text="Sign In"
+		        android:textAlignment="center"
+		        android:textAllCaps="false"
+		        android:textSize="16sp"/>
+	</LinearLayout>
+
+	<TextView android:id="@+id/remind_later"
+	          android:layout_width="wrap_content"
+	          android:layout_height="wrap_content"
+	          android:layout_alignParentBottom="true"
+	          android:layout_centerHorizontal="true"
+	          android:fontFamily="sans-serif-condensed"
+	          android:text="Remind Me Later"
+	          android:textAlignment="center"
+	          android:textColor="@color/subtitle_text"
+	          android:textSize="18sp"
+	          android:textStyle="bold"/>
+</RelativeLayout>

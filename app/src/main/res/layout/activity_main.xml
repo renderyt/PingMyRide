@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/list_border"
+	android:backgroundTint="@color/white"
+	android:fitsSystemWindows="true"
+	tools:context="com.threelawsrobotics.pingmyride.MainActivity">
+
+	<android.support.design.widget.AppBarLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:theme="@style/AppTheme.NoActionBar.AppBarOverlay">
+
+		<android.support.v7.widget.Toolbar
+			android:id="@+id/toolbar"
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			xmlns:app="http://schemas.android.com/apk/res-auto"
+			xmlns:tools="http://schemas.android.com/tools"
+			android:layout_width="match_parent"
+			android:layout_height="?attr/actionBarSize"/>
+
+	</android.support.design.widget.AppBarLayout>
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		xmlns:tools="http://schemas.android.com/tools"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior"
+		tools:context="com.locator.threelawsrobotics.pingmyridefinal.MainActivity"
+		tools:showIn="@layout/activity_main">
+
+		<LinearLayout android:id="@+id/help_text"
+		              android:layout_width="wrap_content"
+		              android:layout_height="wrap_content"
+		              android:layout_margin="@dimen/full_margin">
+			<TextView android:layout_width="wrap_content"
+			          android:layout_height="wrap_content"
+			          android:fontFamily="sans-serif-thin"
+			          android:text="You have no cars registered\n
+			          \n\nRegister a car by using the add button below"
+			          android:textAlignment="center"
+			          android:textSize="24sp"/>
+
+			<TextView android:layout_width="wrap_content"
+			          android:layout_height="wrap_content"
+			          android:fontFamily="sans-serif-thin"
+			          android:text="You have no cars registered\n
+			          \n\nRegister a car by using the add button below"
+			          android:textAlignment="center"
+			          android:textSize="24sp"/>
+		</LinearLayout>
+
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/rv"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"/>
+	</LinearLayout>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fab"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="bottom|end"
+		android:layout_margin="@dimen/fab_margin"
+		android:src="@drawable/ic_add_white_24dp"
+		app:layout_behavior="com.threelawsrobotics.pingmyride.ScrollAwareFABBehavior"/>
+</android.support.design.widget.CoordinatorLayout>

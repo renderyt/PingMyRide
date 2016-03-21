@@ -1,0 +1,8 @@
+<resources>
+	<string name="app_name">Ping My Ride</string>
+	<string name="title_activity_add">Add A Car</string>
+	<string name="button_ok">Ok</string>
+	<string name="button_cancel">No</string>
+	<string name="title_activity_maps">Map</string>
+	<string name="title_activity_maps2">Map</string>
+</resources>
