@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
+import android.os.Build;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.app.AlertDialog;
@@ -21,7 +23,6 @@ import java.util.List;
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CarViewHolder> {
 	private List<Car> cars;
-	private String trackerSSID;
 	private Resources res;
 
 	RVAdapter(List<Car> cars) {
@@ -58,7 +59,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CarViewHolder> {
 			holder.carPhoto.setImageDrawable(cars.get(position).getPhoto());
 		} else {
 			// add default photo
-			Bitmap src = BitmapFactory.decodeResource(res, R.drawable.login_background);
+			Bitmap src = BitmapFactory.decodeResource(res, R.drawable.default_photo);
 			RoundedBitmapDrawable dr =
 					RoundedBitmapDrawableFactory.create(res, src);
 			dr.setCornerRadius(Math.min(dr.getMinimumWidth(), dr.getMinimumHeight()));
@@ -92,6 +93,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.CarViewHolder> {
 					// Pass car information to track activity
 					intent.putExtra("carName", carName.getText().toString());
 					intent.putExtra("carLocation", carLocation.getText().toString());
+					String trackerSSID = cars.get(getAdapterPosition()).getTrackerSSID();
+					intent.putExtra("trackerSSID", trackerSSID);
 					v.getContext().startActivity(intent);
 					((Activity) v.getContext()).overridePendingTransition(
 							R.anim.slide_right_in, R.anim.slide_left_out);

@@ -24,29 +24,23 @@
 	</android.support.design.widget.AppBarLayout>
 
 	<LinearLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:app="http://schemas.android.com/apk/res-auto"
-		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:orientation="vertical"
-		android:paddingBottom="@dimen/activity_vertical_margin"
-		android:paddingLeft="@dimen/activity_horizontal_margin"
-		android:paddingRight="@dimen/activity_horizontal_margin"
-		android:paddingTop="@dimen/activity_vertical_margin"
 		app:layout_behavior="@string/appbar_scrolling_view_behavior"
 		tools:context="com.threelawsrobotics.pingmyride.AddActivity"
 		tools:showIn="@layout/activity_add">
 
 		<LinearLayout android:layout_width="match_parent"
-		              android:layout_height="0dp"
-		              android:layout_weight="1"
+		              android:layout_height="match_parent"
+		              android:layout_margin="@dimen/activity_horizontal_margin"
 		              android:orientation="vertical">
 
 			<TextView android:id="@+id/instruction_one"
 			          android:layout_width="wrap_content"
 			          android:layout_height="wrap_content"
 			          android:layout_marginTop="16dp"
+			          android:fontFamily="sans-serif-light"
 			          android:text="1. Turn on the PMR Tracker"
 			          android:textColor="@color/normal_text"
 			          android:textSize="24sp"/>
@@ -54,40 +48,83 @@
 			<TextView android:id="@+id/instruction_two"
 			          android:layout_width="wrap_content"
 			          android:layout_height="wrap_content"
+			          android:layout_marginBottom="@dimen/full_margin"
 			          android:layout_marginTop="16dp"
+			          android:fontFamily="sans-serif-light"
 			          android:text="2. Hold your phone near the Tracker"
 			          android:textColor="@color/normal_text"
 			          android:textSize="24sp"/>
-		</LinearLayout>
-		<LinearLayout android:layout_width="match_parent"
-		              android:layout_height="0dp"
-		              android:layout_weight="1"
-		              android:orientation="vertical">
 
-			<TextView android:id="@+id/nearest_tracker"
-			          android:layout_width="wrap_content"
-			          android:layout_height="wrap_content"
-			          android:textColor="@color/normal_text"
-			          android:textSize="16sp"/>
+			<View android:id="@+id/border"
+			      android:layout_width="match_parent"
+			      android:layout_height="2dp"
+			      android:layout_marginBottom="@dimen/full_margin"
+			      android:layout_marginTop="@dimen/full_margin"
+			      android:background="@color/transparent_white"/>
 
-			<EditText android:id="@+id/car_name"
+			<TextView android:id="@+id/search_status"
 			          android:layout_width="match_parent"
 			          android:layout_height="wrap_content"
-			          android:imeOptions="actionDone"
-			          android:maxLines="1"
-			          android:singleLine="true"
-			          android:visibility="gone"/>
+			          android:layout_marginTop="@dimen/full_margin"
+			          android:fontFamily="sans-serif-light"
+			          android:text="Locating Tracker..."
+			          android:textAlignment="center"
+			          android:textColor="@color/normal_text"
+			          android:textSize="24sp"/>
 
-			<Button android:id="@+id/skip_button"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
-			        android:text="Skip"/>
+			<TextView android:id="@+id/nearest_tracker"
+			          android:layout_width="match_parent"
+			          android:layout_height="wrap_content"
+			          android:layout_marginBottom="@dimen/full_margin"
+			          android:layout_marginTop="@dimen/full_margin"
+			          android:fontFamily="sans-serif-light"
+			          android:textAlignment="center"
+			          android:textColor="@color/normal_text"
+			          android:textSize="24sp"/>
+
+			<TextView android:id="@+id/skip_button"
+			          android:layout_width="match_parent"
+			          android:layout_height="wrap_content"
+			          android:layout_marginBottom="@dimen/full_margin"
+			          android:layout_marginTop="72dp"
+			          android:text="Skip"
+			          android:textAlignment="center"
+			          android:textColor="@color/normal_text"
+			          android:textSize="18sp"
+			          android:textStyle="italic"/>
+
+			<LinearLayout android:id="@+id/edit_layout"
+			              android:layout_width="match_parent"
+			              android:layout_height="wrap_content"
+			              android:orientation="vertical"
+			              android:visibility="gone">
+				<TextView android:layout_width="match_parent"
+				          android:layout_height="wrap_content"
+				          android:layout_marginBottom="@dimen/full_margin"
+				          android:layout_marginTop="@dimen/full_margin"
+				          android:text="Name Your Car"
+				          android:textColor="@color/normal_text"
+				          android:textSize="24sp"/>
+				<EditText android:id="@+id/car_name"
+				          android:layout_width="match_parent"
+				          android:layout_height="wrap_content"
+				          android:layout_marginBottom="@dimen/full_margin"
+				          android:layout_marginTop="@dimen/full_margin"
+				          android:imeOptions="actionDone"
+				          android:inputType="textCapWords"
+				          android:maxLines="1"
+				          android:singleLine="true"
+				          android:textColor="@color/white"/>
+			</LinearLayout>
 
 			<Button android:id="@+id/continue_button"
-			        android:layout_width="wrap_content"
-			        android:layout_height="wrap_content"
+			        android:layout_width="match_parent"
+			        android:layout_height="52dp"
+			        android:layout_marginTop="@dimen/full_margin"
+			        android:background="@color/track_background"
 			        android:text="Continue"
-			        android:visibility="gone"/>
+			        android:textColor="@color/white"
+			        android:textSize="18sp"/>
 		</LinearLayout>
 	</LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

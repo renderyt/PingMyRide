@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="wrap_content">
 
@@ -22,52 +23,81 @@
 
 				<de.hdodenhof.circleimageview.CircleImageView
 					android:id="@+id/car_photo"
-					android:layout_width="72dp"
-					android:layout_height="72dp"
-					android:layout_alignParentLeft="true"
-					android:layout_centerVertical="true"
-					android:layout_marginRight="24dp"
-					android:src="@drawable/login_background"/>
-
-				<!--android:layout_toRightOf="@id/car_photo"-->
-				<TextView
-					android:id="@+id/car_name"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
+					android:layout_width="68dp"
+					android:layout_height="68dp"
+					android:layout_alignParentRight="true"
 					android:layout_alignParentTop="true"
-					android:layout_toRightOf="@id/car_photo"
-					android:fontFamily="sans-serif-thin"
-					android:textColor="@color/black"
-					android:textSize="30sp"/>
-
-				<ImageView
-					android:id="@+id/time_icon"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:layout_below="@id/car_name"
-					android:layout_marginTop="@dimen/half_margin"
-					android:layout_toRightOf="@id/car_photo"
-					android:src="@drawable/ic_access_time_white_18dp"
-					android:tint="@color/colorAccent"/>
+					android:layout_marginTop="8dp"
+					android:src="@drawable/login_background"
+					app:civ_border_color="@android:color/transparent"
+					app:civ_border_width="4dp"/>
 
 				<TextView
 					android:id="@+id/car_time"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_alignBottom="@id/time_icon"
-					android:layout_marginLeft="@dimen/half_margin"
-					android:layout_toRightOf="@+id/time_icon"
+					android:layout_alignBottom="@+id/car_location"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:fontFamily="sans-serif-light"
+					android:text=""
+					android:textSize="16sp"/>
+
+				<TextView
+					android:id="@+id/car_name"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentTop="true"
 					android:fontFamily="sans-serif-thin"
-					android:text="Unknown"
+					android:textColor="@color/black"
+					android:textSize="30sp"/>
+
+				<ImageView
+					android:id="@+id/owner_icon"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/car_name"
+					android:layout_marginTop="4dp"
+					android:src="@drawable/ic_person_outline_white_18dp"
+					android:tint="@color/colorAccent"/>
+
+				<TextView
+					android:id="@+id/car_owner"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignBottom="@id/owner_icon"
+					android:layout_marginLeft="@dimen/half_margin"
+					android:layout_toRightOf="@+id/owner_icon"
+					android:fontFamily="sans-serif-light"
+					android:text="Me"
+					android:textSize="16sp"/>
+
+				<ImageView
+					android:id="@+id/money_icon"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_below="@id/owner_icon"
+					android:layout_marginTop="4dp"
+					android:src="@drawable/ic_attach_money_white_18dp"
+					android:tint="@color/colorAccent"/>
+
+				<TextView
+					android:id="@+id/car_cost"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignBottom="@id/money_icon"
+					android:layout_marginLeft="@dimen/half_margin"
+					android:layout_toRightOf="@+id/money_icon"
+					android:fontFamily="sans-serif-light"
+					android:text="0.00"
 					android:textSize="16sp"/>
 
 				<ImageView
 					android:id="@+id/location_icon"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:layout_below="@id/time_icon"
-					android:layout_marginTop="@dimen/half_margin"
-					android:layout_toRightOf="@id/car_photo"
+					android:layout_below="@id/money_icon"
+					android:layout_marginTop="4dp"
 					android:src="@drawable/ic_location_city_white_18dp"
 					android:tint="@color/colorAccent"/>
 
@@ -78,7 +108,7 @@
 					android:layout_alignBottom="@id/location_icon"
 					android:layout_marginLeft="@dimen/half_margin"
 					android:layout_toRightOf="@+id/location_icon"
-					android:fontFamily="sans-serif-thin"
+					android:fontFamily="sans-serif-light"
 					android:text="Not Parked"
 					android:textSize="16sp"/>
 			</RelativeLayout>

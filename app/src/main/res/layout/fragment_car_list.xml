@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/list_border"
+	android:backgroundTint="@color/white"
+	android:fitsSystemWindows="true"
+	tools:context="com.threelawsrobotics.pingmyride.MainActivity">
+
+	<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:app="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+		<LinearLayout android:id="@+id/help_text"
+		              android:layout_width="wrap_content"
+		              android:layout_height="wrap_content"
+		              android:layout_margin="@dimen/full_margin"
+		              android:orientation="vertical">
+
+			<TextView android:layout_width="match_parent"
+			          android:layout_height="wrap_content"
+			          android:layout_marginBottom="@dimen/full_margin"
+			          android:layout_marginTop="48dp"
+			          android:fontFamily="sans-serif-light"
+			          android:text="You have no cars registered."
+			          android:textAlignment="center"
+			          android:textSize="24sp"/>
+
+			<RelativeLayout android:layout_width="match_parent"
+			                android:layout_height="wrap_content"
+			                android:layout_marginBottom="@dimen/full_margin"
+			                android:layout_marginTop="@dimen/full_margin">
+
+				<ImageView android:layout_width="wrap_content"
+				           android:layout_height="wrap_content"
+				           android:layout_centerInParent="true"
+				           android:src="@drawable/empty_garage"/>
+			</RelativeLayout>
+
+			<TextView android:layout_width="match_parent"
+			          android:layout_height="wrap_content"
+			          android:layout_marginTop="@dimen/full_margin"
+			          android:fontFamily="sans-serif-light"
+			          android:text="Register a car by using the add button below."
+			          android:textAlignment="center"
+			          android:textSize="24sp"/>
+		</LinearLayout>
+
+		<android.support.v7.widget.RecyclerView
+			android:id="@+id/rv"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1"/>
+	</LinearLayout>
+
+	<android.support.design.widget.FloatingActionButton
+		android:id="@+id/fab"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true"
+		android:layout_alignParentRight="true"
+		android:layout_margin="@dimen/fab_margin"
+		android:src="@drawable/ic_add_white_24dp"
+		app:layout_behavior="com.threelawsrobotics.pingmyride.ScrollAwareFABBehavior"/>
+</RelativeLayout>

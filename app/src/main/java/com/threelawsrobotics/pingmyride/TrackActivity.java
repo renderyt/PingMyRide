@@ -183,14 +183,14 @@ public class TrackActivity extends FragmentActivity implements View.OnClickListe
 						// connect to tracker wifi
 						WifiConfiguration wifiConfig = new WifiConfiguration();
 						wifiConfig.SSID = trackerSSID;
-						wifiConfig.preSharedKey = "\"savetheworld\"";
-						wifiConfig.status = WifiConfiguration.Status.ENABLED;
-						wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
-						wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
-						wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
-						wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
-						wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
-						wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
+//						wifiConfig.preSharedKey = "\"savetheworld\"";
+//						wifiConfig.status = WifiConfiguration.Status.ENABLED;
+//						wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.TKIP);
+//						wifiConfig.allowedGroupCiphers.set(WifiConfiguration.GroupCipher.CCMP);
+//						wifiConfig.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK);
+//						wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP);
+//						wifiConfig.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP);
+//						wifiConfig.allowedProtocols.set(WifiConfiguration.Protocol.RSN);
 
 ////						remember id
 //						prevNetwork = wifi.getConnectionInfo().getNetworkId();

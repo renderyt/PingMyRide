@@ -18,30 +18,60 @@
 
 	</android.support.design.widget.AppBarLayout>
 
-	<RelativeLayout android:id="@+id/track_tab"
-	                android:layout_width="match_parent"
-	                android:layout_height="192dp">
-		<TextView android:id="@+id/signal_strength"
-		          android:layout_width="match_parent"
-		          android:layout_height="wrap_content"
-		          android:layout_centerInParent="true"/>
-	</RelativeLayout>
-
 	<fragment android:id="@+id/map"
 	          android:name="com.google.android.gms.maps.SupportMapFragment"
 	          xmlns:android="http://schemas.android.com/apk/res/android"
 	          xmlns:tools="http://schemas.android.com/tools"
 	          android:layout_width="match_parent"
-	          android:layout_height="match_parent"/>
+	          android:layout_height="0dp"
+	          android:layout_weight="1"/>
 
-	<RelativeLayout android:id="@+id/action_tab"
+	<RelativeLayout android:id="@+id/track_tab"
 	                android:layout_width="match_parent"
-	                android:layout_height="wrap_content"
-	                android:background="@color/colorAccent">
+	                android:layout_height="48dp"
+	                android:background="@color/track_background">
+
+		<View android:id="@+id/signal_bar"
+		      android:layout_width="match_parent"
+		      android:layout_height="0dp"
+		      android:layout_alignParentBottom="true"
+		      android:background="@color/colorAccent"/>
+
+		<View android:id="@+id/progress_bar_line"
+		      android:layout_width="match_parent"
+		      android:layout_height="1dp"
+		      android:layout_above="@id/signal_bar"
+		      android:background="@color/secondaryColor"
+		      android:visibility="gone"/>
+
+		<TextView android:id="@+id/signal_strength"
+		          android:layout_width="wrap_content"
+		          android:layout_height="wrap_content"
+		          android:layout_alignParentRight="true"
+		          android:layout_below="@id/progress_bar_line"
+		          android:layout_marginRight="@dimen/half_margin"
+		          android:fontFamily="sans-serif-condensed"
+		          android:text="00"
+		          android:textColor="@color/secondaryColor"
+		          android:textSize="24sp"
+		          android:visibility="gone"/>
+
+		<TextView android:id="@+id/signal_strength_update"
+		          android:layout_width="match_parent"
+		          android:layout_height="wrap_content"
+		          android:layout_centerInParent="true"
+		          android:fontFamily="sans-serif-condensed"
+		          android:text="test"
+		          android:textAlignment="center"
+		          android:textColor="@color/secondaryColor"
+		          android:textSize="24sp"
+		          android:visibility="gone"/>
+
 		<Button android:id="@+id/action_button"
 		        android:layout_width="match_parent"
 		        android:layout_height="48dp"
+		        android:background="@android:color/transparent"
 		        android:text="Park Here"
-		        android:background="@color/colorAccent"/>
+		        android:textColor="@color/white"/>
 	</RelativeLayout>
 </LinearLayout>
